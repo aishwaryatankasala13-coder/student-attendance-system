@@ -1,4 +1,3 @@
-```groovy
 pipeline {
     agent any
 
@@ -12,11 +11,8 @@ pipeline {
         stage('Setup Python') {
             steps {
                 bat '"C:\\Users\\BHARGAVI\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" --version'
-
                 bat '"C:\\Users\\BHARGAVI\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m venv .venv-ci'
-
                 bat '.venv-ci\\Scripts\\python.exe -m pip install --upgrade pip'
-
                 bat '.venv-ci\\Scripts\\python.exe -m pip install -r requirements.txt'
             }
         }
@@ -32,10 +28,8 @@ pipeline {
         success {
             echo 'CI pipeline completed successfully!'
         }
-
         failure {
             echo 'CI pipeline failed. Check the console output.'
         }
     }
 }
-```
