@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Percentage</title>
+</head>
+<body>
+    <h1>Student Attendance Percentage</h1>
+
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Roll Number</th>
+                <th>Present Days</th>
+                <th>Total Days</th>
+                <th>Attendance Percentage</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.roll_number }}</td>
+                <td>{{ student.present_days }}</td>
+                <td>{{ student.total_days }}</td>
+                <td>{{ student.percentage }}%</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">No students found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="/">Home</a>
+</body>
+</html>

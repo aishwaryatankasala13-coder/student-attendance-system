@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Records</title>
+</head>
+<body>
+    <h1>Student Attendance Records</h1>
+
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Roll Number</th>
+                <th>Attendance Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record.name }}</td>
+                <td>{{ record.roll_number }}</td>
+                <td>{{ record.attendance_date }}</td>
+                <td>{{ record.status }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4">No attendance records found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="/">Home</a>
+    <br><br>
+    <a href="/mark-attendance">Mark Attendance</a>
+</body>
+</html>
