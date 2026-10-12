@@ -1,4 +1,4 @@
-
+```groovy
 pipeline {
     agent any
 
@@ -11,9 +11,12 @@ pipeline {
 
         stage('Setup Python') {
             steps {
-                bat 'python --version'
-                bat 'python -m venv .venv-ci'
+                bat '"C:\\Users\\BHARGAVI\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" --version'
+
+                bat '"C:\\Users\\BHARGAVI\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m venv .venv-ci'
+
                 bat '.venv-ci\\Scripts\\python.exe -m pip install --upgrade pip'
+
                 bat '.venv-ci\\Scripts\\python.exe -m pip install -r requirements.txt'
             }
         }
@@ -35,3 +38,4 @@ pipeline {
         }
     }
 }
+```
